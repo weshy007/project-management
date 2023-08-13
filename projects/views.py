@@ -1,11 +1,12 @@
-from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
-from .forms import ProjectForm, TaskForm
-from .models import Project, Task
-from django.shortcuts import get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
+
+from .forms import TaskForm
+from .models import Project, Task
+
 
 # Create your views here.
 @login_required
@@ -95,6 +96,6 @@ class TaskUpdateView(LoginRequiredMixin,UpdateView):
 
 class TaskDeleteView(LoginRequiredMixin,DeleteView):
     model = Task
-    template_name = 'projects/task_confirm_delete.html'
+    template_name = 'task_confirm_delete.html'
     success_url = reverse_lazy('tasks')
 

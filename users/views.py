@@ -7,7 +7,6 @@ from django.shortcuts import redirect, render
 from projects.models import Project
 
 from .forms import ProfileForm
-from .models import Profile
 
 
 # Create your views here.
