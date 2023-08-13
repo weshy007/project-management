@@ -23,7 +23,7 @@ def projects(request):
 
 def registration(request):
     if request.method == 'POST':
-        form - UserCreationForm(request.POST)
+        form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
@@ -33,7 +33,7 @@ def registration(request):
 
 
 class UserLoginView(LoginView):
-    template_name = 'login.hmtl'
+    template_name = 'login.html'
     form = AuthenticationForm
 
 
