@@ -15,3 +15,4 @@ class TaskForm(ModelForm):
 class ProjectForm(ModelForm):
     class Meta:
         model = Project
+        fields = '__all__'
